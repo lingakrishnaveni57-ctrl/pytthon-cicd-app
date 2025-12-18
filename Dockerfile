@@ -1,5 +1,5 @@
 FROM python:3.10-slim
 WORKDIR /app
-COPY . /app
+COPY . /python
 RUN pip install --no-cache-dir -r requirements.txt || true
-CMD ["python", "app.py"]
+CMD ["python", "python.py"]

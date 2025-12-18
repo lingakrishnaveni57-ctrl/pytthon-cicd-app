@@ -25,14 +25,14 @@ jobs:
           pip install -r requirements.txt || true
 
       - name: Run app
-        run: python app.py
+        run: python python.py
 
   docker-build-push:
     needs: build-test
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 72091968
         uses: actions/checkout@v4
 
       - name: Login to Docker Hub
@@ -42,9 +42,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/myapp:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/python.py:latest .
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/myapp:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/python.py:latest
 
 
